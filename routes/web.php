@@ -43,7 +43,6 @@ Route::middleware('locale')->group(function () {
         Route::resource('categoria', CategoriaController::class, ['except' => ['show']]);
         Route::resource('produto', ProdutoController::class);
 
-
         //Rotas para perfil do usuário
         Route::controller(ProfileController::class)->name('profile.')->group(function () {
             Route::get('profile', 'edit')->name('edit');
