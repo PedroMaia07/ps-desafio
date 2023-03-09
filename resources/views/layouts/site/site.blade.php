@@ -14,9 +14,14 @@
 </head>
 <body>
   @include('layouts.site.header')
+
   @yield('conteudo')
+
   @include('layouts.site.footer')
   
-    <script scr="{{asset('site/js/script.js')}}"></script>
+  <script 
+  src="{{ asset('site/js/script.js') }}">
+  </script>
+
 </body>
 </html>

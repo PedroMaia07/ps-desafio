@@ -27,7 +27,7 @@ class ProdutoRequest extends FormRequest
             'nome' =>['required', 'min:3', 'max:150'],
             'descricao' => ['required', 'min:10', 'max:255'],
             'preco'=> ['required', 'min:2', 'max:10'],
-            'quantidade' => ['required', 'min:0'],
+            'quantidade' => ['required'],
             'imagem' => 'image',
         ];
     }

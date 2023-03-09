@@ -4,7 +4,7 @@
     border: none;
     text-decoration: none;
     box-sizing: border-box;
-    outline: nome !important;
+    outline: none !important;
 }
 
 .material-symbols-outlined {
@@ -120,16 +120,28 @@ hr {
     background-image: linear-gradient(to right, darkorange, gray);
 }
 
+@media screen and(max-width: 500px) {
+    h1 {
+        text-align: center;
+        line-height: 1.1;
+    }
+}
+
 /* css do footer*/
 
 #site-footer {
     width: 100%;
     max-width: 100vw;
 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     background-color: darkorange;
     color: black;
 
-    padding: 10px 30px;
+    padding: 0px 30px;
+    z-index: 100;
 }
 
 #footer-container {
@@ -149,9 +161,8 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 25%;
-    min-height: 20vh;
-    height: 100%;
+    width: 100px;
+    height: 100px;
     position: relative;
 }
 #footer-logo img {
@@ -175,11 +186,74 @@ hr {
     width: 25%;
 }
 #redes-sociais img {
-    width: 60%;
-    height: 60%;
-    background-color: black;
+    width: 60px;
+    height: 60px;
     padding: 10px;
-    border: 4px solid black;
-    border-radius: 50%;
     cursor: pointer;
+    object-fit: scale-down;
+}
+
+/* css index */
+
+.produtos {
+    display: flex;
+    justify-content: center;
+    padding: 100px 100px;
+}
+#card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transform-style: preserve-3d;
+    transition: all.3s;
+    padding: 0px 50px;
+}
+
+.face-3 p {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    transform-style: preserve-3d;
+    border: 1px solid darkorange;
+    border-radius: 15px;
+    padding: 10px 10px;
+}
+
+.face-2 {
+    width: 200px;
+    height: 200px;
+    color: black;
+    border: 5px solid darkorange;
+    border-radius: 15px;
+    padding: 10px 10px;
+}
+.face {
+    width: 200px;
+    height: 200px;
+    color: black;
+    border-radius: 10px;
+    position: absolute;
+}
+
+#back {
+    background-color: lightyellow;
+}
+
+#front {
+    background-color: white;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+#front img {
+    width: 200px;
+    height: 200px;
+    border: 5px solid darkorange;
+    border-radius: 15px;
+    padding: 10px 0px;
+}
+
+.flip {
+    transform: rotateY(180deg);
 }
