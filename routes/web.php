@@ -25,6 +25,7 @@ use App\Http\Controllers\SiteController;
 Route::get('siteIndex', [SiteController::class, 'index'])->name('siteIndex');
 Route::get('produtoFind', [SiteController::class, 'produtoFind'])->name('produtoFind');
 Route::get('produtoFilter', [SiteController::class, 'produtoFilter'])->name('produtoFilter');
+Route::post('comprar/{id}', [SiteController::class, 'comprar'])->name('comprar');
 
 
 Route::middleware('locale')->group(function () {
