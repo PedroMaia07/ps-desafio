@@ -33,7 +33,7 @@ class CategoriaController extends Controller
         $data = $request->all();
         $this->categoria->create($data);
 
-        return redirect()->route('categoria.index')->with('Success', 'Categoria criada com sucesso');
+        return redirect()->route('categoria.index')->with('success', 'Categoria criada com sucesso');
     }
 
     public function show($id){
@@ -53,7 +53,7 @@ class CategoriaController extends Controller
         $categoria = $this->categoria->find($id);
         $categoria->update($data);
 
-        return redirect()->route('categoria.index')->with('sucess', 'Categoria meditada com sucesso!');
+        return redirect()->route('categoria.index')->with('success', 'Categoria meditada com sucesso!');
     }   
 
     public function destroy($id)
@@ -61,6 +61,6 @@ class CategoriaController extends Controller
         $categoria = $this->categoria->find($id);
         $categoria->delete();
 
-        return redirect()->route('categoria.index')->with('sucess', 'Categoria deletada com sucesso!');
+        return redirect()->route('categoria.index')->with('success', 'Categoria deletada com sucesso!');
     }
 }

@@ -120,13 +120,6 @@ hr {
     background-image: linear-gradient(to right, darkorange, gray);
 }
 
-@media screen and(max-width: 500px) {
-    h1 {
-        text-align: center;
-        line-height: 1.1;
-    }
-}
-
 /* css do footer*/
 
 #site-footer {
@@ -145,22 +138,15 @@ hr {
 }
 
 #footer-container {
-    width: 100%;
-    min-height: 20vh;
-    height: 100%;
-
+    height: 130px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    font-size: 18px;
-    font-weight: 400;
 }
 
 #footer-logo {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
     width: 100px;
     height: 100px;
     position: relative;
@@ -168,6 +154,8 @@ hr {
 #footer-logo img {
     max-width: 100%;
     max-height: 200px;
+    display: flex;
+    justify-content: center;
     cursor: pointer;
     position: absolute;
     bottom: 0;
@@ -176,6 +164,11 @@ hr {
     font-size: 20px;
     width: 50%;
     text-align: center;
+}
+#texto-footer p {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px 80px 0px 0px;
 }
 #redes-sociais {
     display: flex;
@@ -186,8 +179,8 @@ hr {
     width: 25%;
 }
 #redes-sociais img {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     padding: 10px;
     cursor: pointer;
     object-fit: scale-down;
@@ -199,8 +192,8 @@ hr {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
+    justify-content: center;
+    align-items: center;
 }
 
 #card {
@@ -218,7 +211,7 @@ hr {
     display: flex;
     justify-content: center;
     transform-style: preserve-3d;
-    border: 1px solid darkorange;
+    border: 5px solid darkorange;
     border-radius: 15px;
     padding: 10px 10px;
 }
@@ -239,6 +232,14 @@ hr {
     position: absolute;
 }
 
+#front img {
+    width: 210px;
+    height: 210px;
+    border: 5px solid darkorange;
+    border-radius: 15px;
+    padding: 10px 10px;
+}
+
 #back {
     background-color: lightyellow;
 }
@@ -249,14 +250,6 @@ hr {
     backface-visibility: hidden;
 }
 
-#front img {
-    width: 210px;
-    height: 210px;
-    border: 5px solid darkorange;
-    border-radius: 15px;
-    padding: 10px 10px;
-}
-
 .flip {
     transform: rotateY(180deg);
     display: flex;
@@ -265,7 +258,7 @@ hr {
 }
 
 .compra {
-    width: 80px;
+    width: 100px;
     height: 26px;
     border: none;
     color: black;
@@ -278,12 +271,12 @@ hr {
     align-items: center;
     font-size: 9px;
     border-radius: 15px 5px 15px 5px;
-    margin: 4px 2px;
+    margin: 4px 100px;
     transition-duration: 0.4s;
     cursor: pointer;
 }
 .compranegada {
-    width: 80px;
+    width: 100px;
     height: 26px;
     border: none;
     color: black;
@@ -296,7 +289,7 @@ hr {
     align-items: center;
     font-size: 9px;
     border-radius: 15px 5px 15px 5px;
-    margin: 4px 2px;
+    margin: 4px 100px;
     transition-duration: 0.4s;
     cursor: pointer;
     opacity: 0.6;
@@ -308,13 +301,90 @@ hr {
     color: white;
 }
 
-.trintim {
+.espaco-faces {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
 
-#card form {
-    display: grid;
+.espaco-faces label {
+    display: flex;
+    margin: 0px 100px;
+}
+
+.espaco-faces input {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    border: 1px solid darkorange;
+    background-color: lightyellow;
+    padding: 5px;
+    margin: 0px 100px;
+}
+
+/*Responsividade*/
+
+@media (max-width: 920px) {
+    /*max-width = Tela menores que essa resolução*/
+    #texto-footer p {
+        padding: 0px 30px 0px 0px;
+    }
+}
+
+@media (max-width: 650px) {
+    /*max-width = Tela menores que essa resolução*/
+    #texto-footer {
+        font-size: 13px;
+    }
+    #footer-logo img {
+        width: 80px;
+        height: 80px;
+    }
+    #redes-sociais {
+        gap: 0px;
+    }
+    #redes-sociais img {
+        height: 50px;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+    }
+    #texto-footer p {
+        padding: 0px 30px 0px 0px;
+    }
+}
+@media (max-width: 500px) {
+    /*max-width = Tela menores que essa resolução*/
+    #texto-footer {
+        font-size: 10px;
+    }
+    #footer-logo img {
+        width: 60px;
+        height: 60px;
+    }
+    #redes-sociais {
+        gap: 0px;
+    }
+    #redes-sociais img {
+        height: 40px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+    }
+    #footer-logo {
+        height: 60px;
+        width: 60px;
+    }
+    #header-logo img {
+        width: 60px;
+        height: 60px;
+    }
+    .search {
+        width: 130px;
+        height: 100px;
+    }
+    #texto-footer p {
+        padding: 0px 15px 0px 0px;
+    }
 }

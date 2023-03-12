@@ -37,24 +37,24 @@
       @isset($produtos)
         @if(count($produtos))
           @foreach($produtos as $produto)
-          <div class="trintim">
-          <div class="flip" id="card" onclick="flipcard(this)">
-              <div class="face" id="front">
-                <img src="{{$produto['imagem']}}">
-                <p>Preço: <br> {{$produto['preco']}} <br>   Quantidade disponivel: <br> {{$produto['quantidade']==0?'Sem Estoque':$produto['quantidade']}}</p>   
-              </div>
-              <div class="face-2" id="back">
-              <p>Categoria do Produto:<br> {{$produto->categoria->categoria}}<br></p>
-                <p>Produto :<br> {{$produto['nome']}}<br></p>
-                <p>Descrição : <br> {{$produto['descricao']}}</p>
-              </div>
+          <div class="espaco-faces">
+            <div class="flip" id="card" onclick="flipcard(this)">
+                <div class="face" id="front">
+                  <img src="{{$produto['imagem']}}">
+                  <p>Preço: <br> {{$produto['preco']}} <br>   Quantidade disponivel: <br> {{$produto['quantidade']==0?'Sem Estoque':$produto['quantidade']}}</p>   
+                </div>
+                <div class="face-2" id="back">
+                <p>Categoria do Produto:<br> {{$produto->categoria->categoria}}<br></p>
+                  <p>Produto :<br> {{$produto['nome']}}<br></p>
+                  <p>Descrição : <br> {{$produto['descricao']}}</p>
+                </div>
             </div>
-            <form method="POST" action="{{ route('comprar', ['id' => $produto->id]) }}" >
-              @csrf
-              <label for="quantidade">Quantidade:</label>
-              <input type="number" name="quantidade" id="quantidade" value="1" >
-              <button type="submit" class="{{$produto['quantidade']!=0?'compra':'compranegada'}}" >COMPRAR</button>
-            </form>
+                <form method="POST" action="{{ route('comprar', ['id' => $produto->id]) }}" >
+                  @csrf
+                  <label for="quantidade">Quantidade:</label>
+                  <input type="number" name="quantidade" id="quantidade" value="1" >
+                  <button type="submit" class="{{$produto['quantidade']!=0?'compra':'compranegada'}}" >COMPRAR</button>
+                </form>
           </div>
             
             

@@ -1,13 +1,16 @@
 <footer id="site-footer">
-  <div id="footer-container">
+  <div id="footer-container">    
     <div id="footer-logo">
-      <img src="{{ asset('site/img/logoraio.png') }}" alt="Logo do site"
-        onclick="openPage('http://localhost:8000/siteIndex')">
+       <a href="{{ route('siteIndex') }}">
+         <img src="{{asset("site/img/logoraio.png")}}" alt="Logo do site">
+      </a>
     </div>
   </div>
 
+
+
   <div id="texto-footer">
-    Pedro Viçosi Maia , 2023. Todos os direitos reservados.
+      <p>Pedro Viçosi Maia , 2023. <br> Todos os direitos reservados.</p>
   </div>
 
   <div id="redes-sociais">

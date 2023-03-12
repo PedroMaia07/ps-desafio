@@ -2,10 +2,12 @@
   <div id="header-logo">
 
     <div>
-      <form class="search" action="">
-        <input type="text" id="search" name="search">
+      <form class="search" action="{{ route('buscar') }}">
+        <input type="text" id="search" name="search" placeholder="Pesquisar ...">
         <button type="submit">
-          <span class="material-symbols-outlined">search</span>
+          <span class="material-symbols-outlined">
+            search
+          </span>
         </button>
       </form>
     </div>

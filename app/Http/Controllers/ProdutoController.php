@@ -43,7 +43,7 @@ class ProdutoController extends Controller
     
         $this->produtos->create($data);
 
-        return redirect()->route('produto.index')->with('Produto cadastrado com sucesso!');
+        return redirect()->route('produto.index')->with('success','Produto cadastrado com sucesso!');
     }
 
 
@@ -74,7 +74,7 @@ class ProdutoController extends Controller
             $data['imagem'] = '/storage/' . $request->file('imagem')->store('produtos', 'public'); 
         }
         $produto->update($data);
-        return redirect()->route('produto.index')->with('Produto editado com sucesso!');
+        return redirect()->route('produto.index')->with('success','Produto editado com sucesso!');
 
     }
 
@@ -83,7 +83,7 @@ class ProdutoController extends Controller
         $produto = $this->produtos->find($id);
         Storage::disk('public')->delete(substr($produto->imagem, 9));
         $produto->delete();
-        return redirect()->route('produto.index')->with('Produto deletado com sucesso!');
+        return redirect()->route('produto.index')->with('success','Produto deletado com sucesso!');
     }
     
 }
