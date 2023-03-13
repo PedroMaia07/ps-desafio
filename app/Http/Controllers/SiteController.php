@@ -23,7 +23,7 @@ class SiteController extends Controller
     }
 
     public function produtoFilter(Request $request){
-        $categoriaSelect = Categoria::where('categoria', $request['categoria'])->first();
+        $categoriaSelect = Categoria::where('categoria', $request['categorias'])->first();
         $produtos =[];
         if (isset($categoriaSelect))
             $produtos = Produto::where('categoria_id', $categoriaSelect->id)->get();
